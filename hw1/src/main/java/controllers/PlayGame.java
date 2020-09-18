@@ -40,6 +40,7 @@ class PlayGame {
     
     // Player 1: start game
     app.post("/startgame", ctx -> {
+      board.setInitState();
       String paras = ctx.body();
       // Get the type chosen by player 1
       char type1 = paras.charAt(paras.length() - 1);

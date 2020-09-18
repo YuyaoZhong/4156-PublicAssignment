@@ -20,9 +20,8 @@ public class GameBoard {
   
   /**
    * Generate a new board.
-   */
-  
-  public GameBoard() {
+   */  
+  public void setInitState() {
     turn = 1;
     winner = 0;
     isDraw = false;
@@ -35,7 +34,6 @@ public class GameBoard {
       }
     }
   }
-  
   public void setP1(Player player1) {
     this.p1 = player1;
   }
