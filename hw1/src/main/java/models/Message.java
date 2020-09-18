@@ -12,6 +12,14 @@ public class Message {
     return this.moveValidity;
   }
   
+  public int getCode() {
+    return this.code;
+  }
+ 
+  public String getMessage() {
+    return this.message;
+  }
+  
   public void setMoveValidity(boolean valid) {
     this.moveValidity = valid;
   }
