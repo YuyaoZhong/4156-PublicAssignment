@@ -15,15 +15,16 @@ public class Player {
     return id;
   }
   
-  public void setID(int n) {
-    this.id = n;
-  }
-  
   public char getType() {
     return type;
   }
-
+  
+  public void setID(int id) {
+    this.id = id;
+  }
+  
   public void setType(char type) {
     this.type = type;
   }
+  
 }

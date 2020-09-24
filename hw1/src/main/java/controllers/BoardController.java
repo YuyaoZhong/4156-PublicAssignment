@@ -120,24 +120,29 @@ class BoardController {
    * @return boolean, false when not forming a line
    */
   public boolean formDiag(int x, int y) {
-    if (x != y || x != 2 - y) {
+    if (x != y && x != 2 - y) {
       return false;
     }
     char type = this.board.getBoardStateAt(x, y);
+    boolean mainDiag = false;
+    boolean subDiag = false;
     if (x == y) { // judge the main diagonal
+      mainDiag = true;
       for (int i = 0; i < 3; i++) {
         if (this.board.getBoardStateAt(i, i) != type) {
-          return false;
-        }
-      }
-    } else if (x == 2 - y) { // judge the sub diagonal
-      for (int i = 0; i < 3; i++) {
-        if (this.board.getBoardStateAt(i, 2 - i) != type) {
-          return false;
+          mainDiag = false;
         }
       }
     }
-    return true;
+    if (x == 2 - y) { // judge the sub diagonal
+      subDiag = true;
+      for (int i = 0; i < 3; i++) {
+        if (this.board.getBoardStateAt(i, 2 - i) != type) {
+          subDiag = false;
+        }
+      }
+    } 
+    return mainDiag || subDiag;
   }
   
   /**

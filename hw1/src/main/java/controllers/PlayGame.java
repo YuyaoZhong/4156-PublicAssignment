@@ -72,7 +72,7 @@ class PlayGame {
       Message message = boardController.validMove(newMove);
      
       // update UI when valid
-      if (message.getValid()) {
+      if (message.getMoveValidity()) {
         boardController.makeMove(newMove);
         String boardJson = boardController.getBoardJsonString();
         sendGameBoardToAllPlayers(boardJson);

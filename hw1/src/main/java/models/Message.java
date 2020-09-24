@@ -8,7 +8,7 @@ public class Message {
 
   private String message;
   
-  public boolean getValid() {
+  public boolean getMoveValidity() {
     return this.moveValidity;
   }
   
